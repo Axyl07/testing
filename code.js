@@ -1,6 +1,6 @@
-// export function sum(a, b) {
-//     return a + b;
-//   }
+export function sum(a, b) {
+    return a + b;
+  }
 
 function capitalize(string) {
   let newString = string[0].toUpperCase() + string.slice(1);
@@ -43,5 +43,15 @@ function caesarCipher(string, key) {
   let result = newArray.join("");
   return result;
 }
-console.log(caesarCipher("abc!", 3));
-export { capitalize, reverse, calc, caesarCipher };
+
+function analyzeArray(array) {
+  return {
+    average: (array.reduce((accumulator,current)=> accumulator + current,0))/array.length,
+    min: Math.min(...array),
+    max: Math.max(...array),
+    length: array.length
+  }
+}
+
+
+export { capitalize, reverse, calc, caesarCipher,analyzeArray };
