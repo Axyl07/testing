@@ -1,4 +1,4 @@
-import { sum, capitalize,reverse,calc } from "./code.js";
+import { sum, capitalize,reverse,calc,caesarCipher } from "./code.js";
 //capitalize
 test("capitalize the first letter of string", () => {
   expect(capitalize("string")).toBe("String");
@@ -31,6 +31,15 @@ test('Perform calculations', () => {
   expect(calc.subtract(num1,num2)).toBe(8)
   expect(calc.divide(num1,num2)).toBe(5)
   expect(calc.multiply(num1,num2)).toBe(20)
+})
+
+
+//caesarCipher
+test('Ceaser Cipher', () => {
+  expect(caesarCipher('abc', 1)).toBe('bcd');
+  // expect(caesarCipher('xyz', 3)).toBe('abc');
+  expect(caesarCipher('HeLLo', 3)).toBe('KhOOr');
+  expect(caesarCipher('Hello, World!', 3)).toBe('Khoor, Zruog!');
 })
 // test('adds 1 + 2 to equal 3', () => {
 //   expect(sum(1, 2)).toBe(3);

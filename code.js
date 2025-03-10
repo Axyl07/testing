@@ -20,4 +20,27 @@ let calc = {
   divide: (x, y) => x / y,
   multiply: (x, y) => x * y,
 }
-export { capitalize,reverse,calc };
+
+function caesarCipher(string, key) {
+  let stringArray = string.split('')
+  console.log(stringArray)
+  let newArray = [];
+  for (let index = 0; index < stringArray.length; index++) {
+    if (stringArray[index].toUpperCase() !== stringArray[index].toLowerCase()) {
+      let ascii = string.charCodeAt(index);
+      ascii = ascii + key
+      let ch = String.fromCharCode(ascii);
+      newArray.push(ch)
+    } else newArray.push(stringArray[index]);
+  }
+  // let charArray = []
+  // for (let index = 0; index < newArray.length; index++) {
+  //   let ch = String.fromCharCode(newArray[index])
+  //   charArray.push(ch);
+    
+  // }
+  let result = newArray.join('');
+  return result
+}
+console.log(caesarCipher('abc!',3));
+export { capitalize,reverse,calc,caesarCipher };
